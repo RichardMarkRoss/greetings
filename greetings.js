@@ -8,10 +8,12 @@ var displayNameValue = document.querySelector(".displayTheName");
 
 var displayTheCount = document.querySelector(".displayTheCount");
 
+var users = localStorage.getItem('users')
+var storedUsers = users ? JSON.parse(localStorage.getItem('users')) : {};
 
-  var greetCount = 0;
-  var holdName = "";
-  var greet = ''
+
+var theGreetingsVar = greetingsFactory(storedUsers);
+
 function greetingElement() {
   var checkedRadioBtn = document.querySelector("input[name='lang']:checked");
   if (checkedRadioBtn){
@@ -20,25 +22,15 @@ function greetingElement() {
 
     var name = textBoxValue.value;
 
-    if (name != " ") {
-        holdName = name;
-        greetCount++
-        //return holdName;
-    };
+    console.log(theGreetingsVar.theGreetCounter(name, langChosen))
+    console.log(theGreetingsVar.returnMap())
 
-    if (langChosen == 'english'){
-      greet = 'hello' +' '+ holdName;
-    }else if(langChosen == 'afrikaans'){
-      greet = 'Goeie dag ' + holdName;
-    }else if (langChosen == 'isiXhosa'){
-      greet = 'Usuku olumnwandi ' + holdName;
-    };
+    displayNameValue.innerHTML = theGreetingsVar.greetingTheLogic(name, langChosen);
+      displayTheCount.innerHTML = theGreetingsVar.theGreetCounter();
+      localStorage.setItem('users', JSON.stringify(theGreetingsVar.returnMap()));
 
-
-    //
-    // console.log(name);
-    displayNameValue.innerHTML = greet;
-      displayTheCount.innerHTML = greetCount;
-    console.log(holdName);
+  //  console.log(holdName);
 }
-greetAddBtn.addEventListener('click', greetingElement);
+greetAddBtn.addEventListener('click',function(){
+   greetingElement();
+ });
