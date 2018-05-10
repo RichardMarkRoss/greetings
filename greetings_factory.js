@@ -39,12 +39,17 @@ function greetingsFactory(storedUsers){
 
   function returnMap(){
     return namesStored
+  }  
+  function clear(){
+    namesStored ={};
+   localStorage.clear();
   }
 
   return{
     greetingTheLogic,
     theGreetCounter,
-    returnMap
+    returnMap,
+    clear
   }
 //localStorage['greetingTheLogic'] = namesStored
 }

@@ -4,6 +4,8 @@ var textBoxValue = document.querySelector(".myText");
 
 var greetAddBtn = document.querySelector(".btnDisplayValue");
 
+var greetResetBtn = document.querySelector(".btnResetValue")
+
 var displayNameValue = document.querySelector(".displayTheName");
 
 var displayTheCount = document.querySelector(".displayTheCount");
@@ -31,6 +33,14 @@ function greetingElement() {
 
   //  console.log(holdName);
 }
+
 greetAddBtn.addEventListener('click',function(){
    greetingElement();
+ });
+ greetResetBtn.addEventListener('click', function(){
+  
+  theGreetingsVar.clear();
+  window.location.reload();
+
+
  });
