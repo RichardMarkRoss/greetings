@@ -1,6 +1,6 @@
 function greetingsFactory(storedUsers){
   var namesStored = {};
-  var greetCount = 0;
+//  var greetCount = 0;
   var holdName = "";
   var greet = '';
   function greetingTheLogic(name, langChosen){
@@ -13,9 +13,9 @@ function greetingsFactory(storedUsers){
             holdName = name;
             //localStorage['holdName'] = namesStored;
             if (namesStored[holdName] === undefined){
-            greetCount++;
+            //greetCount++;
 
-            namesStored[holdName] = 1;
+            namesStored[holdName] = 0;
              //localStorage['greetNumber'] = greetCount;
             }
         }
@@ -35,21 +35,21 @@ function greetingsFactory(storedUsers){
 
   function returnMap(){
     return namesStored;
-  }  
+  }
   function clear(){
     namesStored ={};
    localStorage.clear();
   }
-  function returnsGreetings(){
-    return greet;
-  }
+  // function returnsGreetings(){
+  //   return greet;
+  // }
 
   return{
     greetingTheLogic,
     theGreetCounter,
     returnMap,
     clear,
-    returnsGreetings
+   // returnsGreetings
   };
 
 }
