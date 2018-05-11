@@ -41,20 +41,3 @@ describe('the greetings function testing the counter', function(){
         assert.equal(theGreetingsVar.theGreetCounter(),3);
     });
 });
-describe('the greetings function extra tests', function(){
-    it('greetings function should test 0 if no values were added', function(){
-        var theGreetingsVar = greetingsFactory();
-
-        theGreetingsVar.greetingTheLogic();
-
-        assert.equal(theGreetingsVar.theGreetCounter(),1);
-    });
-    it('greetings function should return the last name inserted', function(){
-        var theGreetingsVar = greetingsFactory();
-
-        theGreetingsVar.greetingTheLogic('Richard',"afrikaans");
-        theGreetingsVar.greetingTheLogic('greg',"english");
-
-        assert.equal(theGreetingsVar.greetingTheLogic(),"Hello greg")
-    });
-});
