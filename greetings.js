@@ -32,6 +32,10 @@ function greetingElement() {
     localStorage.setItem('users', JSON.stringify(theGreetingsVar.returnMap()));
     //greetingTheLogic
   //  console.log(holdName);
+
+  // if(displayName = ''){
+  //   alert("please insert name and language")
+  // }
 }
 
 greetAddBtn.addEventListener('click',function(){

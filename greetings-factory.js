@@ -1,33 +1,48 @@
 function greetingsFactory(storedUsers){
   var namesStored = {};
-//  var greetCount = 0;
+  var greetCount = 0;
   var holdName = "";
   var greet = '';
   function greetingTheLogic(name, langChosen){
+   
+    
 
         if(storedUsers){
           namesStored = storedUsers;
         }
 
-        if (name != "") {
-            holdName = name;
-            //localStorage['holdName'] = namesStored;
-            if (namesStored[holdName] === undefined){
-            //greetCount++;
+        if (name != ""){
+            
+            holdName = name.toUpperCase();
 
-            namesStored[holdName] = 0;
-             //localStorage['greetNumber'] = greetCount;
-            }
-        }
         if (langChosen == 'english'){
-          greet = 'Hello '+ holdName;
+          greet = 'HELLO '+ holdName;
+          if (namesStored[holdName] === undefined){
+            namesStored[holdName] = 0;
+            }
+
         }else if(langChosen == 'afrikaans'){
-          greet = 'Goeie dag ' + holdName;
+          greet = 'GOEIE DAG ' + holdName;
+          if (namesStored[holdName] === undefined){
+            namesStored[holdName] = 0;
+            }
+
         }else if (langChosen == 'isiXhosa'){
-          greet = 'Usuku olumnwandi ' + holdName;
+          greet = 'USUKU OLUMNWANDI ' + holdName;
+          if (namesStored[holdName] === undefined){
+            namesStored[holdName] = 0;
+            }
+
+        } else{
+          alert('insert name and language');
         }
+
+
     return greet;
+  }else{
+    alert('Please insert name and language');
   }
+}
 
   function theGreetCounter(){
     return Object.keys(namesStored).length;

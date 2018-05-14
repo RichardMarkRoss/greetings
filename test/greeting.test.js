@@ -2,17 +2,17 @@ describe('the greetings function basic test', function(){
     it('greetings function test greeting in English', function(){
         var theGreetingsVar = greetingsFactory();
 
-        assert.equal(theGreetingsVar.greetingTheLogic('Richard',"english"),"Hello Richard");
+        assert.equal(theGreetingsVar.greetingTheLogic('Richard',"english"),"HELLO RICHARD");
     });
     it('greetings function test greeting in Afrikaans', function(){
         var theGreetingsVar = greetingsFactory();
 
-        assert.equal(theGreetingsVar.greetingTheLogic('Richard',"afrikaans"),"Goeie dag Richard");
+        assert.equal(theGreetingsVar.greetingTheLogic('Richard',"afrikaans"),"GOEIE DAG RICHARD");
     });
     it('greetings function test greeting in isiXhosa', function(){
         var theGreetingsVar = greetingsFactory();
 
-        assert.equal(theGreetingsVar.greetingTheLogic('Richard',"isiXhosa"),"Usuku olumnwandi Richard");     
+        assert.equal(theGreetingsVar.greetingTheLogic('Richard',"isiXhosa"),"USUKU OLUMNWANDI RICHARD");     
     });
 });
 describe('the greetings function testing the counter', function(){
