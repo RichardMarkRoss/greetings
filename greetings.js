@@ -15,6 +15,7 @@ var storedUsers = users ? JSON.parse(localStorage.getItem('users')) : {};
 
 
 var theGreetingsVar = greetingsFactory(storedUsers);
+displayTheCount.innerHTML = Object.keys(storedUsers).length;
 
 function greetingElement() {
   var checkedRadioBtn = document.querySelector("input[name='lang']:checked");
@@ -28,8 +29,8 @@ function greetingElement() {
     // console.log(theGreetingsVar.returnMap())
   
     displayNameValue.innerHTML = theGreetingsVar.greetingTheLogic(name, langChosen);
-    displayTheCount.innerHTML = theGreetingsVar.theGreetCounter();
     localStorage.setItem('users', JSON.stringify(theGreetingsVar.returnMap()));
+    displayTheCount.innerHTML = theGreetingsVar.theGreetCounter();
     //greetingTheLogic
   //  console.log(holdName);
 
@@ -44,7 +45,7 @@ greetAddBtn.addEventListener('click',function(){
  greetResetBtn.addEventListener('click', function(){
   
   theGreetingsVar.clear();
-  window.location.reload();
+  //window.location.reload();
 
 
 });

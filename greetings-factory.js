@@ -10,7 +10,6 @@ function greetingsFactory(storedUsers){
         if(storedUsers){
           namesStored = storedUsers;
         }
-
         if (name != ""){
             
             holdName = name.toUpperCase();
