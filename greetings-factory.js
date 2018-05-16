@@ -45,8 +45,8 @@ function GreetingsFactory(storedUsers){
 }
 
   function TheGreetCounter(){
-
-    return Object.keys(namesStored).length;
+      var GreeterCount = Object.keys(namesStored).length;
+    return GreeterCount
   }
 
   function ReturnMap(){
