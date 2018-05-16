@@ -1,9 +1,9 @@
 function GreetingsFactory(storedUsers){
-  var namesStored = {};
+  var namesStored = storedUsers || {};
   var greetCount = 0;
   var holdName = "";
   var greet = '';
-  displayTheCount.innerHTML = Object.keys(storedUsers).length;
+  //displayTheCount.innerHTML = Object.keys(storedUsers).length;
   function GreetingTheLogic(name, langChosen){
    
     
@@ -46,7 +46,7 @@ function GreetingsFactory(storedUsers){
 
   function TheGreetCounter(){
       var GreeterCount = Object.keys(namesStored).length;
-    return GreeterCount
+    return GreeterCount;
   }
 
   function ReturnMap(){
