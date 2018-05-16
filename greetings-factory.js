@@ -1,9 +1,10 @@
-function greetingsFactory(storedUsers){
+function GreetingsFactory(storedUsers){
   var namesStored = {};
   var greetCount = 0;
   var holdName = "";
   var greet = '';
-  function greetingTheLogic(name, langChosen){
+  displayTheCount.innerHTML = Object.keys(storedUsers).length;
+  function GreetingTheLogic(name, langChosen){
    
     
 
@@ -43,27 +44,24 @@ function greetingsFactory(storedUsers){
   }
 }
 
-  function theGreetCounter(){
+  function TheGreetCounter(){
+
     return Object.keys(namesStored).length;
   }
 
-  function returnMap(){
+  function ReturnMap(){
     return namesStored;
   }
-  function clear(){
+  function Clear(){
     namesStored ={};
    localStorage.clear();
   }
-  // function returnsGreetings(){
-  //   return greet;
-  // }
 
   return{
-    greetingTheLogic,
-    theGreetCounter,
-    returnMap,
-    clear,
-   // returnsGreetings
+    GreetingTheLogic,
+    TheGreetCounter,
+    ReturnMap,
+    Clear,
   };
 
 }

@@ -1,5 +1,3 @@
-//var langChosen = document.querySelector(".langTypeRadio");
-
 var textBoxValue = document.querySelector(".myText");
 
 var greetAddBtn = document.querySelector(".btnDisplayValue");
@@ -12,12 +10,10 @@ var displayTheCount = document.querySelector(".displayTheCount");
 
 var users = localStorage.getItem('users');
 var storedUsers = users ? JSON.parse(localStorage.getItem('users')) : {};
+var theGreetingsVar = GreetingsFactory(storedUsers);
 
 
-var theGreetingsVar = greetingsFactory(storedUsers);
-displayTheCount.innerHTML = Object.keys(storedUsers).length;
-
-function greetingElement() {
+function GreetingElement() {
   var checkedRadioBtn = document.querySelector("input[name='lang']:checked");
   if (checkedRadioBtn){
       var langChosen = checkedRadioBtn.value;
@@ -25,27 +21,19 @@ function greetingElement() {
   
     var name = textBoxValue.value;
   
-    // console.log(theGreetingsVar.theGreetCounter(name, langChosen))
-    // console.log(theGreetingsVar.returnMap())
+   
   
-    displayNameValue.innerHTML = theGreetingsVar.greetingTheLogic(name, langChosen);
-    localStorage.setItem('users', JSON.stringify(theGreetingsVar.returnMap()));
-    displayTheCount.innerHTML = theGreetingsVar.theGreetCounter();
-    //greetingTheLogic
-  //  console.log(holdName);
-
-  // if(displayName = ''){
-  //   alert("please insert name and language")
-  // }
+    displayNameValue.innerHTML = theGreetingsVar.GreetingTheLogic(name, langChosen);
+    localStorage.setItem('users', JSON.stringify(theGreetingsVar.ReturnMap()));
+    displayTheCount.innerHTML = theGreetingsVar.TheGreetCounter();
+    
 }
 
 greetAddBtn.addEventListener('click',function(){
-   greetingElement();
+   GreetingElement();
  });
  greetResetBtn.addEventListener('click', function(){
   
-  theGreetingsVar.clear();
+  theGreetingsVar.Clear();
   window.location.reload();
-
-
 });
