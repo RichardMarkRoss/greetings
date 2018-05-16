@@ -1,5 +1,5 @@
 function GreetingsFactory(storedUsers){
-  var namesStored = {};
+  var namesStored = storedUsers||{};
   var greetCount = 0;
   var holdName = "";
   var greet = '';
