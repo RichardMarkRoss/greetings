@@ -45,7 +45,7 @@ greetAddBtn.addEventListener('click',function(){
  greetResetBtn.addEventListener('click', function(){
   
   theGreetingsVar.clear();
-  //window.location.reload();
+  window.location.reload();
 
 
 });
